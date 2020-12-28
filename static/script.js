@@ -61,25 +61,46 @@ function handleParams(e){
         
     }
     //console.log(JSON.stringify(collectedParams));
-    
-    e.preventDefault();
-
-    postData('/api/predict', collectedParams)
-  .then(data => {
-    resolvedDisease.innerHTML=data.Disease;
-    console.log(data.Disease)
     paramForm.reset();
-    setTimeout(()=>{
-        loader.style.display="none";
-        
-    },500)
-    setTimeout(()=>{
-       window.location.reload()
-        
-    },5000)
-    
-  });
+    e.preventDefault();
+    if(isEmptyForm(collectedParams)){
+
+        setTimeout(()=>{
+            loader.style.display="none";
+            paramForm.reset();
+        },3400)
+        resolvedDisease.innerHTML="Not Enough Input, Try again";
+        paramForm.reset();
+        resolvedDisease.style.color=" #ff7d7d"
+    }else{
+        postData('/api/predict', collectedParams)
+        .then(data => {
+        resolvedDisease.style.color="unset"
+          resolvedDisease.innerHTML=data.Disease;
+          console.log(data.Disease)
+          paramForm.reset();
+          setTimeout(()=>{
+              loader.style.display="none";
+              
+          },700)
+        //   setTimeout(()=>{
+        //      window.location.reload() 
+        //   },9000)
+        });
+    }
+  
     // e.target.submit();
+}
+
+function isEmptyForm(collectedParams){
+    let empty=true;
+    let params=Object.values(collectedParams)
+    for(let param of Object.keys(collectedParams)){
+        if(collectedParams[param]!="0" && param!="age40"){
+            empty=false;
+        }
+    }
+    return empty;
 }
 
 async function postData(url = '', data = {}) {
@@ -87,6 +108,10 @@ async function postData(url = '', data = {}) {
     const response = await fetch(url, {
         method: 'POST',
         headers: {
+            'cache': 'no-store',
+         'cache-control': 'no-store',
+          'pragma':'no-cache',
+          'cache-control': 'no-cache',
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*'
         },
