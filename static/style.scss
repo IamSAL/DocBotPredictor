@@ -12,6 +12,41 @@ $form-border-color: rgba(0,0,0,.1);
     padding: 0;
 }
 
+
+/* phones */
+@media only screen 
+  and (min-width: 310px) 
+  and (max-width: 820px) 
+   { 
+.left-container {
+    width: 100%;
+    display: block;
+}
+
+body{
+    display:block;
+}
+.right-container {
+    display: block;
+    width: 100%;
+}
+
+* {
+    overflow-x: hidden;
+}
+
+.signup-container{
+    display:block;
+    max-width:100%
+}
+.left-container img{
+   
+    padding-top:0%;
+    width: 50%;
+  
+}
+}
+
 .overlay {
   display: none;
   position: absolute;
