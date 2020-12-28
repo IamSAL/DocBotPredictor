@@ -83,9 +83,9 @@ function handleParams(e){
               loader.style.display="none";
               
           },700)
-        //   setTimeout(()=>{
-        //      window.location.reload() 
-        //   },9000)
+          setTimeout(()=>{
+             window.location.reload() 
+          },8000)
         });
     }
   
