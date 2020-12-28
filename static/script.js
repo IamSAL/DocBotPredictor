@@ -73,6 +73,10 @@ function handleParams(e){
         loader.style.display="none";
         
     },500)
+    setTimeout(()=>{
+       window.location.reload()
+        
+    },5000)
     
   });
     // e.target.submit();
