@@ -10,13 +10,78 @@
 <body>
     <div class='signup-container'>
         <div class='left-container'>
-          <h1>
-            <i class='fas fa-paw'></i>
-            DOCBOT
-          </h1>
-          <div class='puppy'>
-            <img src='/static/eyeArt.png'>
+          <div class="overlay">
+            <img src="/static/giphy.gif" alt="">
           </div>
+          <h1>
+           
+          <img src="/static/docbotlogo.png" alt="DocBot">
+          </h1>
+          <div class="result">
+            <div class="h3">Posssible disease</div>
+            <div class="disease" data-about="A cataract is a dense, cloudy area that forms in the lens of the eye. A cataract begins when proteins in the eye form clumps that prevent the lens from sending clear images to the retina. The retina works by converting the light that comes through the lens into signals. It sends the signals to the optic nerve, which carries them to the brain.">
+             Submit symptoms to see possible disease
+            </div>
+            <div class="short-description">
+              A cataract is a dense, cloudy area that forms in the lens of the eye. A cataract begins when proteins in the eye form clumps that prevent the lens from sending clear images to the retina. The retina works by converting the light that comes through the lens into signals. It sends the signals to the optic nerve, which carries them to the brain.
+            </div>
+            <div class="actions">
+              <div class='set'>
+                
+                <div class='pets-spayed-neutered'>
+                  <!-- <label for='pet-spayed'>Blurry or foggy vision</label> -->
+               
+                  <div class='radio-container'>
+                    <span class="yes">
+                      <label > <a target="_blank" href="https://www.healthline.com/health/cataract#causes">Causes</a></label>
+                    </span>
+                  </div>
+                </div>
+                  <div class='pets-spayed-neutered'>
+                    <!-- <label for='pet-spayed'>Blurry or foggy vision</label> -->
+                 
+                    <div class='radio-container'>
+                      <span class="yes">
+                        <label ><a target="_blank" href="https://www.healthline.com/health/cataract#diagnosis">Diagnosis</a></label>
+                      </span>
+                    </div>
+                  </div>
+
+              <div class='pets-spayed-neutered'>
+                <!-- <label for='pet-spayed'>Blurry or foggy vision</label> -->
+             
+                <div class='radio-container'>
+                  <span class="yes">
+                    <label ><a target="_blank" href="https://www.healthline.com/health/cataract#treatments">Treatments</a></label>
+                  </span>
+                </div>
+              </div>
+              <div class='pets-spayed-neutered'>
+                <!-- <label for='pet-spayed'>Blurry or foggy vision</label> -->
+             
+                <div class='radio-container'>
+                  <span class="yes">
+                    <label > <a target="_blank" href="https://www.healthline.com/health/cataract#symptoms">More symptoms</a></label>
+                  </span>
+                </div>
+              </div>
+              <div class='pets-spayed-neutered'>
+                <!-- <label for='pet-spayed'>Blurry or foggy vision</label> -->
+             
+                <div class='radio-container'>
+                  <span class="yes">
+                    <label > <a target="_blank" href="https://www.healthline.com/health/cataract#symptoms">Learn More...</a></label>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            
+            </div>
+          </div>
+          <!-- <div class='puppy'>
+            <img src='/static/eyeArt.png'>
+          </div> -->
         </div>
         <div class='right-container'>
           <header>
@@ -25,11 +90,11 @@
             <div class='set'>
               <div class='pets-name'>
                 <label for='pets-name'>Name</label>
-                <input id='pets-name' placeholder="Your Name" type='text'>
+                <input id='pets-name' placeholder="Your Name"  type='text'>
               </div>
               <div class='pets-breed'>
                 <label for='age40'>Age</label>
-                <input id='age40' placeholder="Your age" type='number' name="age40">
+                <input id='age40' placeholder="Your age" required type='number' name="age40">
               </div>
               
             </div>
@@ -53,7 +118,7 @@
                
                 <div class='radio-container'>
                   <span class="yes">
-                    <input  id='pressure_in_eye' checked name='pressure_in_eye' type='radio' value='1'>
+                    <input  id='pressure_in_eye' name='pressure_in_eye' type='radio' value='0'>
                     <label for='pressure_in_eye'>Pain or pressure in eyes</label>
                   </span>
                 </div>

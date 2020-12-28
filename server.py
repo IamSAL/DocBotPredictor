@@ -38,4 +38,4 @@ def root():
 
 if __name__=="__main__":
     print("Starting Flask server for docbot predictor...")
-    app.run(port=4200)
+    app.run(port=4200,debug=True)

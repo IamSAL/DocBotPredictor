@@ -34,8 +34,12 @@ let paramForm=document.getElementById('eyeParams')
 paramForm.addEventListener('submit',handleParams);
 
 let params=["clouldy__blurry_or_foggy_vision", "pressure_in_eye", "injury_to_the_eye", "excessive_dryness", "red_eye", "cornea_increase_in_size", "color_identifying_problem", "double_vision", "have_eye_problem_in_family", "age40", "diabetics", "myopia", "trouble_with_glasses", "hard_to_see_at_night", "visible_whiteness", "mass_pain", "vomiting", "water_drops_from_eyes_continuously", "presents_of_light_when_eye_lid_close"]
-let collectedParams={}
+
+let resolvedDisease=document.querySelector('.disease');
+let loader=document.querySelector('.overlay');
 function handleParams(e){
+    loader.style.display="block";
+    let collectedParams={}
     for(let param of params){
         try{
             if(e.target[param].value!=undefined){
@@ -54,15 +58,21 @@ function handleParams(e){
         }
         
     }
-    console.log(JSON.stringify(collectedParams));
+    //console.log(JSON.stringify(collectedParams));
     
     e.preventDefault();
 
-    postData('/api/predict', collectedParams)
+    postData('http://127.0.0.1:4200/api/predict', collectedParams)
   .then(data => {
-    console.log(data); 
+    resolvedDisease.innerHTML=data.Disease;
+    console.log(data.Disease)
+    paramForm.reset();
+    setTimeout(()=>{
+        loader.style.display="none";
+    },500)
+    
   });
-
+    // e.target.submit();
 }
 
 async function postData(url = '', data = {}) {
@@ -78,9 +88,4 @@ async function postData(url = '', data = {}) {
     return response.json(); // parses JSON response into native JavaScript objects
   }
 
-  async function getData(url) {
-   
-    const response = await fetch(url,{method:'GET'})
-    return response.json();
-  }
-
+ 

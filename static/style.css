@@ -6,6 +6,54 @@
   padding: 0;
 }
 
+.overlay {
+  display: none;
+  position: absolute;
+  top: 21%;
+  background: white;
+  height: 100%;
+}
+
+.actions a {
+  all: unset;
+  cursor: pointer;
+}
+
+.actions label {
+  margin: 5px;
+}
+
+.actions .radio-container {
+  margin: 10px;
+}
+
+.actions .radio-container:hover {
+  margin: 10px;
+  background-color: #bddfff;
+}
+
+.short-description {
+  margin-bottom: 20px;
+  padding: 3% 8%;
+  font-family: inherit;
+  text-align: center;
+}
+
+.result .h3 {
+  font-family: 'Montserrat';
+  text-align: center;
+  text-transform: uppercase;
+  color: grey;
+  font-size: 13px;
+}
+
+.disease {
+  font-size: 28px;
+  font-family: ui-monospace;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 body {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -35,7 +83,7 @@ body {
   padding: 40px 0 0 0;
   position: relative;
   text-align: center;
-  width: 200px;
+  width: 300px;
 }
 
 .left-container h1 {
@@ -73,7 +121,7 @@ body {
 }
 
 .left-container img {
-  width: 100%;
+  width: 70%;
 }
 
 .right-container {
