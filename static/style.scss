@@ -130,10 +130,15 @@ body {
     width: 500px;
   
     & h1:nth-of-type(1) {
-        color: $font-color;
-        font-size: 25px;
+      
+        color: rgba(0, 0, 0, 0.8);
+        font-size: 19px;
+        font-family: 'Montserrat';
         margin-bottom: 16px;
         font-weight: 300;
+        text-align: center;
+        text-transform: uppercase;
+    
     }
   
     & .set {
