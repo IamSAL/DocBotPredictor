@@ -62,7 +62,7 @@ function handleParams(e){
     
     e.preventDefault();
 
-    postData('http://127.0.0.1:4200/api/predict', collectedParams)
+    postData('/api/predict', collectedParams)
   .then(data => {
     resolvedDisease.innerHTML=data.Disease;
     console.log(data.Disease)
