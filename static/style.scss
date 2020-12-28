@@ -19,16 +19,16 @@ $form-border-color: rgba(0,0,0,.1);
   and (max-width: 820px) 
    { 
 .left-container {
-    width: 100%;
-    display: block;
+    width: 100% !important;
+    display: block !important;
 }
 
 body{
-    display:block;
+    display:block !important;
 }
 .right-container {
-    display: block;
-    width: 100%;
+    display: block !important;
+    width: 100% !important;
 }
 
 * {
@@ -36,13 +36,13 @@ body{
 }
 
 .signup-container{
-    display:block;
-    max-width:100%
+    display:block !important;
+    max-width:100% !important;
 }
 .left-container img{
    
-    padding-top:0%;
-    width: 50%;
+    padding-top:0% !important;
+    width: 50% !important;
   
 }
 }

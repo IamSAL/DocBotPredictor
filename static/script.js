@@ -38,7 +38,9 @@ let params=["clouldy__blurry_or_foggy_vision", "pressure_in_eye", "injury_to_the
 let resolvedDisease=document.querySelector('.disease');
 let loader=document.querySelector('.overlay');
 function handleParams(e){
+    
     loader.style.display="block";
+    loader.scrollIntoView()
     let collectedParams={}
     for(let param of params){
         try{
@@ -69,6 +71,7 @@ function handleParams(e){
     paramForm.reset();
     setTimeout(()=>{
         loader.style.display="none";
+        
     },500)
     
   });
