@@ -24,11 +24,11 @@ def load_saved_artifacts():
     global __disease_perameters
     global __model
     if(__model==None):
-        with open("./artifacts/all_columns.json","r") as f:
+        with open("./model/all_columns.json","r") as f:
             __all_columns=json.load(f)['data_columns']
             __disease_perameters=__all_columns[1:19]
 
-        with open("./artifacts/DocbotEyeDiseasePredictor_SVM_model.pickle","rb") as f:
+        with open("./model/DocbotEyeDiseasePredictor_SVM_model.pickle","rb") as f:
             __model=pickle.load(f)  
             
         print("loading saved artifacts....done")
