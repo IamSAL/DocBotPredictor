@@ -25,8 +25,10 @@ def predictorApi():
     symptomps=[]
     columns=["clouldy__blurry_or_foggy_vision", "pressure_in_eye", "injury_to_the_eye", "excessive_dryness", "red_eye", "cornea_increase_in_size", "color_identifying_problem", "double_vision", "have_eye_problem_in_family", "age40", "diabetics", "myopia", "trouble_with_glasses", "hard_to_see_at_night", "visible_whiteness", "mass_pain", "vomiting", "water_drops_from_eyes_continuously", "presents_of_light_when_eye_lid_close"]
     params=json.loads(request.data,strict=False)
+    print(params)
     for column in columns:
         symptomps.append(params[column])
+    print(symptomps)
     return jsonify({"Disease":utils.predict_disease_from_19symptomps(symptomps)})
 
 

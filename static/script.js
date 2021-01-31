@@ -1,3 +1,5 @@
+
+
 $(function(){
     $('input[type=radio]').click(function(){
         var $radio = $(this);
@@ -29,6 +31,14 @@ function radiosHandler(e){
     }
 
 }
+
+let short_desc=document.getElementById('short_description');
+let causes=document.getElementById('causes');
+let Diagnosis=document.getElementById('Diagnosis');
+let Treatments=document.getElementById('Treatments');
+let symptomps=document.getElementById('symptomps');
+let learnmore=document.getElementById('learnmore');
+
 
 let paramForm=document.getElementById('eyeParams')
 paramForm.addEventListener('submit',handleParams);
@@ -73,10 +83,18 @@ function handleParams(e){
         paramForm.reset();
         resolvedDisease.style.color=" #ff7d7d"
     }else{
+        console.log(collectedParams);
+        console.log(Object.values(collectedParams).map(i=>Number(i)));
         postData('/api/predict', collectedParams)
         .then(data => {
         resolvedDisease.style.color="unset"
           resolvedDisease.innerHTML=data.Disease;
+          short_desc.innerHTML=diseaseInfo[data.Disease].short_description;
+          causes.href=diseaseInfo[data.Disease].causes;
+          symptomps.href=diseaseInfo[data.Disease].symptomps;
+          Treatments.href=diseaseInfo[data.Disease].Treatments;
+          learnmore.href=diseaseInfo[data.Disease].learnmore;
+          Diagnosis.href=diseaseInfo[data.Disease].Diagnosis;
           console.log(data.Disease)
           paramForm.reset();
           setTimeout(()=>{
@@ -85,7 +103,7 @@ function handleParams(e){
           },700)
           setTimeout(()=>{
              window.location.reload() 
-          },8000)
+          },20000)
         });
     }
   
